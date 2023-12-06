@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Item;
+use App\Rules\JanCodeRule;
 
 class ItemController extends Controller
 {
@@ -38,9 +39,9 @@ class ItemController extends Controller
         if ($request->isMethod('post')) {
             // バリデーション
             $this->validate($request, [
-                'name' => 'required|max:100',
-                'jan_code' => 'required|digits:13',
-                'price' => 'required'
+                'name' => 'required',
+                'jan_code' => ['required', new JanCodeRule()],
+                'price' => 'required',
             ]);
 
             // 商品登録
@@ -59,7 +60,7 @@ class ItemController extends Controller
         return view('item.add');
     }
 
-    
+
     // 商品編集画面 表示
     public function edit(Request $request) {
         $item = Item::where('id', '=', $request->id)->first();
