@@ -7,6 +7,18 @@
 @stop
 
 @section('content')
+<div>
+    <form class="form-group" action="{{ url('items/search') }}" method="get">
+    @csrf
+        <input class="form-control" type="text" name="keyword" placeholder="キーワードを入力してください" value="">
+        <div class="search-button">
+        <button type="submit" class="btn btn-secondary"><i class="fas fa-search"></i>検索</button>
+        </div>
+        
+    </form>
+</div>
+
+
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -25,18 +37,26 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
+                                <th>JANコード</th>
                                 <th>名前</th>
                                 <th>種別</th>
                                 <th>詳細</th>
+                                <th>値段</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($items as $item)
                                 <tr>
                                     <td>{{ $item->id }}</td>
+                                    <td>{{ $item->jan_code }}</td>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->type }}</td>
                                     <td>{{ $item->detail }}</td>
+                                    <td>{{ $item->price }}</td>
+                                    <td class="pr-0"><a href="/items/edit/{{ $item->id }}">
+                                        <button class="btn btn-secondary">編集</button>
+                                    </a></td>
                                 </tr>
                             @endforeach
                         </tbody>
