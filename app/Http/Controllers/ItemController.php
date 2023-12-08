@@ -77,8 +77,9 @@ class ItemController extends Controller
         if ($request->isMethod('post')) {
             // バリデーション
             $this->validate($request, [
-                'name' => 'required|max:100',
                 'jan_code' => ['required', new JanCodeRule()],
+                'name' => 'required|max:100',
+                'type' => 'required|max:100',
                 'price' => 'required',
             ]);
 

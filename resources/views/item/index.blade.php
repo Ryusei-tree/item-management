@@ -43,7 +43,7 @@
                                 <th>名前</th>
                                 <th>種別</th>
                                 <th>詳細</th>
-                                <th>値段</th>
+                                <th>価格</th>
                                 <th></th>
                             </tr>
                         </thead>

@@ -43,8 +43,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="price">値段</label>
-                            <input type="number" class="form-control" id="price" name="price" placeholder="値段">
+                            <label for="price">価格</label>
+                            <input type="number" class="form-control" id="price" name="price" placeholder="価格">
                         </div>
                     </div>
 
