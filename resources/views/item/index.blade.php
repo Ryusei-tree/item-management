@@ -56,7 +56,7 @@
                                     <td>{{ $item->type }}</td>
                                     <td>{{ $item->detail }}</td>
                                     <td>{{ $item->price }}</td>
-                                    <td class="pr-0"><a href="/items/edit/{{ $item->id }}">
+                                    <td class="pe-0"><a href="/items/edit/{{ $item->id }}">
                                         <button class="btn btn-secondary">編集</button>
                                     </a></td>
                                 </tr>
