@@ -39,8 +39,9 @@ class ItemController extends Controller
         if ($request->isMethod('post')) {
             // バリデーション
             $this->validate($request, [
-                'name' => 'required',
                 'jan_code' => ['required', new JanCodeRule()],
+                'name' => 'required|max:100',
+                'type' => 'required|max:100',
                 'price' => 'required',
             ]);
 
@@ -77,8 +78,8 @@ class ItemController extends Controller
             // バリデーション
             $this->validate($request, [
                 'name' => 'required|max:100',
-                'jan_code' => 'required|digits:13',
-                'price' => 'required'
+                'jan_code' => ['required', new JanCodeRule()],
+                'price' => 'required',
             ]);
 
             // 商品編集

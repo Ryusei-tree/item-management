@@ -7,12 +7,14 @@
 @stop
 
 @section('content')
-<div>
-    <form class="form-group" action="{{ url('items/search') }}" method="get">
+<div class="">
+    <form class="form-group search-container" action="{{ url('items/search') }}" method="get">
     @csrf
-        <input class="form-control" type="text" name="keyword" placeholder="キーワードを入力してください" value="">
+        <div>
+            <input class="form-control" type="text" name="keyword" placeholder="キーワードを入力してください" value="">
+        </div>
         <div class="search-button">
-        <button type="submit" class="btn btn-secondary"><i class="fas fa-search"></i>検索</button>
+            <button type="submit" class="btn btn-secondary"><i class="fas fa-search"></i>検索</button>
         </div>
         
     </form>
@@ -68,6 +70,8 @@
 @stop
 
 @section('css')
+<link rel="stylesheet" href="{{ asset('/css/app.css') }}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 @stop
 
 @section('js')

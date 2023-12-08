@@ -50,24 +50,49 @@
 
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary">登録</button>
-                        
-
                     </div>
                 </form>
-
-                <form action="{{ url('items/delete') }}" method="post">
-                    @csrf
-                    @method('delete')
-                    <input type="hidden" name="id" value="{{ $item->id }}">
-                    <button type="submit" class="btn btn-danger">削除</button>
-                </form>
+                
+                <div class="btn-delete">
+                    <button type="submit" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-modal">削除</button>
+                </div>
+                    
+                <!-- 削除の確認画面モーダル -->
+                <div class="modal fade" id="delete-modal" tabindex="-1" aria-labelledby="#delete-modal" aria-hidden=”true”>
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">確認</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>選択中の商品を本当に削除しますか？</p>
+                                <p>{{ $item->name }}</p>
+                            </div>
+                            <div class="modal-footer">
+                                <div class="modal-footer-btns">
+                                    <button class="btn btn-secondary" data-bs-dismiss="modal">キャンセル</button>
+                                    <form action="{{ url('items/delete') }}" method="post">
+                                        @csrf
+                                        @method('delete')
+                                        <input type="hidden" name="id" value="{{ $item->id }}">
+                                        <button class="btn btn-danger modal-btn-delete" type="submit">削除</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 @stop
 
 @section('css')
+<link rel="stylesheet" href="{{ asset('/css/app.css') }}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 @stop
 
 @section('js')
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 @stop

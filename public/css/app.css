@@ -1,0 +1,30 @@
+/* 検索フォーム */
+.search-container {
+    display: flex;
+}
+
+.search-container input {
+    width: 400px;
+}
+
+/* 削除ボタン */
+.btn-delete {
+    z-index: 10;
+    /* margin: -50px 0 0 87px; */
+    position: relative;
+}
+
+.btn-delete button {
+    position: absolute;
+    top: -46px;
+    left: 87px;
+}
+
+/* モーダルウィンドウ */
+.modal-footer-btns {
+    display:flex;
+}
+
+.modal-btn-delete {
+    margin-left: 10px; 
+}
