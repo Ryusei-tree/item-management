@@ -71,7 +71,7 @@ class ItemController extends Controller
     }
 
     // 商品編集
-    public function itemEdit(Request $request)
+    public function itemEdit($id, Request $request)
     {
         // POSTリクエストのとき
         if ($request->isMethod('post')) {
@@ -84,7 +84,7 @@ class ItemController extends Controller
             ]);
 
             // 商品編集
-            $item = Item::where('id', '=', $request->id)->first();
+            $item = Item::find($id); 
             $item->jan_code = $request->jan_code;
             $item->name = $request->name;
             $item->type = $request->type;

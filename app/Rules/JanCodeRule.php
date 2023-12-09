@@ -19,13 +19,3 @@ class JanCodeRule implements ValidationRule
         }
     }
 }
-
-//---------
-// 別解1  strlenを使う
-//---------
-// public function validate(string $attribute, mixed $value, Closure $fail): void
-// {
-//     if(!(strlen($value) == 13) && !(strlen($value) == 12) && !(strlen($value) == 8)) {
-//         $fail('JANコードは13桁、8桁、もしくは12桁で入力してください。');
-//     }
-// }

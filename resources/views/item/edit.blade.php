@@ -20,7 +20,7 @@
             @endif
 
             <div class="card card-primary">
-                <form action="{{ url('/items/itemEdit/{$item->id}') }}" method="POST">
+                <form action="{{ url('/items/itemEdit', $item->id) }}" method="POST">
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
