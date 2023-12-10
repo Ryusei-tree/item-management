@@ -49,7 +49,7 @@
                     </div>
 
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">登録</button>
+                        <button type="submit" class="btn btn-primary">編集</button>
                     </div>
                 </form>
                 
