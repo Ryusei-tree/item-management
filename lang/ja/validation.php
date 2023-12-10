@@ -209,6 +209,7 @@ return [
         'group' => 'グループ',
         'hour' => '時間',
         'image' => '画像',
+        'jan_code' => 'JANコード',
         'last_name' => '姓',
         'lesson' => 'レッスン',
         'line_address_1' => '回線アドレス1',
