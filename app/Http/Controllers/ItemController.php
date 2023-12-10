@@ -122,7 +122,7 @@ class ItemController extends Controller
             $keyword_split = mb_convert_kana($keyword, 's');
             $keyword_split2 = preg_split('/[\s]+/', $keyword_split);
             foreach($keyword_split2 as $keyword) {
-                $query->where('jan_code', $keyword)
+                $query->where('jan_code', 'LIKE', "%{$keyword}%")
                     ->orWhere('name', 'LIKE', "%{$keyword}%")
                     ->orWhere('type', 'LIKE', "%{$keyword}%");
             }
