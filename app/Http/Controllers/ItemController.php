@@ -42,7 +42,7 @@ class ItemController extends Controller
                 'jan_code' => ['required', new JanCodeRule()],
                 'name' => 'required|max:100',
                 'type' => 'required|max:100',
-                'price' => 'required',
+                'price' => 'required|max_digits:9',
             ]);
 
             // 商品登録
@@ -80,7 +80,7 @@ class ItemController extends Controller
                 'jan_code' => ['required', new JanCodeRule()],
                 'name' => 'required|max:100',
                 'type' => 'required|max:100',
-                'price' => 'required',
+                'price' => 'required|max_digits:9',
             ]);
 
             // 商品編集
