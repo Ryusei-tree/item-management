@@ -25,26 +25,26 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="jan-code">EAN Code</label>
-                            <input type="number" class="form-control" id="jan-code" name="jan_code" placeholder="JANコード">
+                            <input type="number" class="form-control" id="jan-code" name="jan_code" placeholder="EAN Code">
                         </div>
                         <div class="form-group">
                             <label for="name">Product Name</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="名前">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Product Name">
                         </div>
 
                         <div class="form-group">
                             <label for="type">Category</label>
-                            <input type="text" class="form-control" id="type" name="type" placeholder="種別">
+                            <input type="text" class="form-control" id="type" name="type" placeholder="Category">
                         </div>
 
                         <div class="form-group">
                             <label for="detail">Notes</label>
-                            <input type="text" class="form-control" id="detail" name="detail" placeholder="詳細説明">
+                            <input type="text" class="form-control" id="detail" name="detail" placeholder="Notes">
                         </div>
 
                         <div class="form-group">
                             <label for="price">Price</label>
-                            <input type="number" class="form-control" id="price" name="price" placeholder="価格">
+                            <input type="number" class="form-control" id="price" name="price" placeholder="Price">
                         </div>
                     </div>
 

@@ -15,7 +15,7 @@ class JanCodeRule implements ValidationRule
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
         if(!($value && preg_match('/^([0-9]{13}|[0-9]{12}|[0-9]{8})$/', $value))) {
-            $fail('JANコードは13桁、8桁、もしくは12桁で入力してください。');
+            $fail('EAN code must be 8, 12 or 13 characters.');
         }
     }
 }
