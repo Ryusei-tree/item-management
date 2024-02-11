@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', '商品一覧')
+@section('title', 'Products List')
 
 @section('content_header')
-    <h1>商品一覧</h1>
+    <h1>Products List</h1>
 @stop
 
 @section('content')
@@ -11,10 +11,10 @@
     <form class="form-group search-container" action="{{ url('items/search') }}" method="get">
     @csrf
         <div>
-            <input class="form-control" type="text" name="keyword" placeholder="キーワードを入力してください" value="">
+            <input class="form-control" type="text" name="keyword" placeholder="Enter the keywords" value="">
         </div>
         <div class="search-button">
-            <button type="submit" class="btn btn-secondary"><i class="fas fa-search"></i>検索</button>
+            <button type="submit" class="btn btn-secondary"><i class="fas fa-search"></i>Search</button>
         </div>
         
     </form>
@@ -25,11 +25,11 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">商品一覧</h3>
+                    <h3 class="card-title">Products List</h3>
                     <div class="card-tools">
                         <div class="input-group input-group-sm">
                             <div class="input-group-append">
-                                <a href="{{ url('items/add') }}" class="btn btn-default">商品登録</a>
+                                <a href="{{ url('items/add') }}" class="btn btn-default">Product Registration</a>
                             </div>
                         </div>
                     </div>
@@ -39,11 +39,11 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>JANコード</th>
-                                <th>名前</th>
-                                <th>種別</th>
-                                <th>詳細</th>
-                                <th>価格</th>
+                                <th>EAN Code</th>
+                                <th>Name</th>
+                                <th>Category</th>
+                                <th>Notes</th>
+                                <th>Price</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -57,7 +57,7 @@
                                     <td>{{ $item->detail }}</td>
                                     <td>{{ $item->price }}</td>
                                     <td class="pe-0"><a href="/items/edit/{{ $item->id }}">
-                                        <button class="btn btn-secondary">編集</button>
+                                        <button class="btn btn-secondary">Edit</button>
                                     </a></td>
                                 </tr>
                             @endforeach

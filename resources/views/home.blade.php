@@ -3,11 +3,11 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>商品管理システム</h1>
+    <h1>Product Management</h1>
 @stop
 
 @section('content')
-    <p>TECH I.S.会社の商品管理画です。</p>
+    <p>Product management system of XX company.</p>
 @stop
 
 @section('css')

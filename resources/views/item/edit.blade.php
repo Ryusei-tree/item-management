@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', '商品編集')
+@section('title', 'Products Editing')
 
 @section('content_header')
-    <h1>商品編集</h1>
+    <h1>Products Editing</h1>
 @stop
 
 @section('content')
@@ -24,32 +24,32 @@
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="jan-code">JANコード</label>
+                            <label for="jan-code">EAN Code</label>
                             <input type="number" class="form-control" id="jan-code" name="jan_code" value="{{ $item->jan_code }}">
                         </div>
                         <div class="form-group">
-                            <label for="name">名前</label>
+                            <label for="name">Product Name</label>
                             <input type="text" class="form-control" id="name" name="name" value="{{ $item->name }}">
                         </div>
 
                         <div class="form-group">
-                            <label for="type">種別</label>
+                            <label for="type">Category</label>
                             <input type="text" class="form-control" id="type" name="type" value="{{ $item->type }}">
                         </div>
 
                         <div class="form-group">
-                            <label for="detail">詳細</label>
+                            <label for="detail">Notes</label>
                             <input type="text" class="form-control" id="detail" name="detail" value="{{ $item->detail }}">
                         </div>
 
                         <div class="form-group">
-                            <label for="price">価格</label>
+                            <label for="price">Price</label>
                             <input type="number" class="form-control" id="price" name="price" value="{{ $item->price }}">
                         </div>
                     </div>
 
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">編集</button>
+                        <button type="submit" class="btn btn-primary">Edit</button>
                     </div>
                 </form>
                 
@@ -57,26 +57,26 @@
                     <button type="submit" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-modal">削除</button>
                 </div>
                     
-                <!-- 削除の確認画面モーダル -->
+                <!-- Confirmation modal for delete -->
                 <div class="modal fade" id="delete-modal" tabindex="-1" aria-labelledby="#delete-modal" aria-hidden=”true”>
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title">確認</h5>
+                                <h5 class="modal-title">Confirm</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <p>選択中の商品を本当に削除しますか？</p>
+                                <p>Are you sure to delete the selected product?</p>
                                 <p>{{ $item->name }}</p>
                             </div>
                             <div class="modal-footer">
                                 <div class="modal-footer-btns">
-                                    <button class="btn btn-secondary" data-bs-dismiss="modal">キャンセル</button>
+                                    <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                                     <form action="{{ url('items/delete') }}" method="post">
                                         @csrf
                                         @method('delete')
                                         <input type="hidden" name="id" value="{{ $item->id }}">
-                                        <button class="btn btn-danger modal-btn-delete" type="submit">削除</button>
+                                        <button class="btn btn-danger modal-btn-delete" type="submit">Delete</button>
                                     </form>
                                 </div>
                             </div>
