@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Products Management ',
+    'title' => 'Item Management ',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -63,12 +63,12 @@ return [
     |
     */
 
-    'logo' => '<b>Products Management</b>',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<b>Item Management</b>',
+    // 'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'Products Management',
+    'logo_img_alt' => 'Item Management',
 
     /*
     |--------------------------------------------------------------------------

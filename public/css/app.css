@@ -1,3 +1,7 @@
+aside .main-sidebar {
+    width: 300px;
+}
+
 /* 検索フォーム */
 .search-container {
     display: flex;
